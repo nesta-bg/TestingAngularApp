@@ -86,7 +86,8 @@
     "use-lifecycle-interface": true,
     "use-pipe-transform-interface": true,
     "curly": [true, "as-needed"],
-    "variable-name": false
+    "variable-name": false,
+    "prefer-const": false
   },
   "rulesDirectory": [
     "codelyzer"
