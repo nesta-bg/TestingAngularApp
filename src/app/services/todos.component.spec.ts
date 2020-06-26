@@ -41,16 +41,16 @@ describe('TodosComponent', () => {
     expect(spy).toHaveBeenCalled();
   });
 
-  // it('should add the new todo returned from the server', () => {
-  //   let todo = { id: 1 };
-  //   let spy = spyOn(service, 'add').and.callFake(t => {
-  //     return from([ todo ]);
-  //   });
+  xit('should add the new todo returned from the server', () => {
+    let todo = { id: 1 };
+    let spy = spyOn(service, 'add').and.callFake(t => {
+      return from([ todo ]);
+    });
 
-  //   component.add();
+    component.add();
 
-  //   expect(component.todos.indexOf(todo)).toBeGreaterThan(-1);
-  // });
+    expect(component.todos.indexOf(todo)).toBeGreaterThan(-1);
+  });
 
   it('should add the new todo returned from the server', () => {
     let todo = { id: 1 };
