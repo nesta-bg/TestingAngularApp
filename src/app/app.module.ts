@@ -6,6 +6,7 @@ import { VoteComponent } from './setup-and-teardown/vote.component';
 import { TodoFormComponent } from './forms/todo-form.component';
 import { TodosComponent } from './services/todos.component';
 import { TextSummaryPipe } from './text-summary-pipe/text-summary.pipe';
+import { LikeComponent } from './like/like.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { TextSummaryPipe } from './text-summary-pipe/text-summary.pipe';
     VoteComponent,
     TodoFormComponent,
     TodosComponent,
-    TextSummaryPipe
+    TextSummaryPipe,
+    LikeComponent
   ],
   imports: [
     BrowserModule
