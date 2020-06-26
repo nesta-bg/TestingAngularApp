@@ -8,6 +8,7 @@ import { TodosComponent } from './services/todos.component';
 import { TextSummaryPipe } from './text-summary-pipe/text-summary.pipe';
 import { LikeComponent } from './like/like.component';
 import { VoterComponent } from './voter/voter.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { VoterComponent } from './voter/voter.component';
     TodosComponent,
     TextSummaryPipe,
     LikeComponent,
-    VoterComponent
+    VoterComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule
