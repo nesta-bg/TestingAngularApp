@@ -9,6 +9,7 @@ import { TextSummaryPipe } from './text-summary-pipe/text-summary.pipe';
 import { LikeComponent } from './like/like.component';
 import { VoterComponent } from './voter/voter.component';
 import { UsersComponent } from './users/users.component';
+import { ItVoterComponent } from './it-voter/it-voter.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UsersComponent } from './users/users.component';
     TextSummaryPipe,
     LikeComponent,
     VoterComponent,
-    UsersComponent
+    UsersComponent,
+    ItVoterComponent
   ],
   imports: [
     BrowserModule
