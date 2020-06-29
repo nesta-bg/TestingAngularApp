@@ -48,5 +48,16 @@ describe('ItVoterComponent', () => {
     const theclass = 'highlighted';
     expect(de.classes[theclass]).toBeTruthy();
   });
+
+  // here focus is on the integration of this component and its template
+  // all execution paths are tested by using unit tests.
+  it('should increase total votes when I click the upvote button', () => {
+    let button = fixture.debugElement.query(By.css('.glyphicon-menu-up'));
+    // second argument - object that represents additional data about the event
+    // (in this case clicking the button doesn't involve any additional data)
+    button.triggerEventHandler('click', null);
+
+    expect(component.totalVotes).toBe(1);
+  });
 });
 
