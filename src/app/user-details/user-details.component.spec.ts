@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserDetailsComponent } from './user-details.component';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Observable, EMPTY } from 'rxjs';
+import { Subject } from 'rxjs';
 
 // Stub - not necessarily related to routers
 // anytime your component has dependencies and
@@ -13,7 +13,15 @@ class RouterStab {
 }
 
 class ActivatedRouteStab {
-  params: Observable<any> = EMPTY;
+  private subject = new Subject();
+
+  push(value) {
+    this.subject.next(value);
+  }
+
+  get params() {
+    return this.subject.asObservable();
+  }
 }
 
 describe('UserDetailsComponent', () => {
@@ -48,5 +56,18 @@ describe('UserDetailsComponent', () => {
     component.save();
 
     expect(spy).toHaveBeenCalledWith(['users']);
+  });
+
+  it('should navigate the user to the not found page when an invalid user id is passed', () => {
+    let router = TestBed.get(Router);
+    let spy = spyOn(router, 'navigate');
+
+    let route: ActivatedRouteStab = TestBed.get(ActivatedRoute);
+    // there is no any method to push the new value to the observable
+    // route.params
+
+    route.push({ id: 0 });
+
+    expect(spy).toHaveBeenCalledWith(['not-found']);
   });
 });
