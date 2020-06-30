@@ -3,6 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { TodosComponent } from './todos.component';
 import { TodoService } from './todo.service';
+import { from } from 'rxjs';
 
 describe('TodosComponent', () => {
   let component: TodosComponent;
@@ -20,10 +21,24 @@ describe('TodosComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TodosComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should load todos from the server', () => {
+    // only if you have registered that dependency at the module level
+    let service = TestBed.get(TodoService);
+    spyOn(service, 'getTodos').and.returnValue(from([ [1, 2, 3] ]));
+
+    // if you have registered that dependency at the component level
+    // let service = fixture.debugElement.injector.get(TodoService);
+
+    fixture.detectChanges();
+
+    expect(component.todos.length).toBe(3);
+  });
+
 });
+
