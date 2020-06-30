@@ -18,6 +18,7 @@ export class UserDetailsComponent implements OnInit {
   }
 
   save() {
+    // to ensure we are testing the right thing comment the line below
     this.router.navigate(['users']);
   }
 
