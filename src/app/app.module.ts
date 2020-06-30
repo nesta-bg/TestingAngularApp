@@ -10,6 +10,7 @@ import { LikeComponent } from './like/like.component';
 import { VoterComponent } from './voter/voter.component';
 import { UsersComponent } from './users/users.component';
 import { ItVoterComponent } from './it-voter/it-voter.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ItVoterComponent } from './it-voter/it-voter.component';
     LikeComponent,
     VoterComponent,
     UsersComponent,
-    ItVoterComponent
+    ItVoterComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule
