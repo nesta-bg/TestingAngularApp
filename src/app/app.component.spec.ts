@@ -1,6 +1,6 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { By } from 'protractor';
+import { By } from '@angular/platform-browser';
 import { RouterOutlet, RouterLinkWithHref } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
@@ -44,20 +44,21 @@ describe('AppComponent', () => {
 
   // ROUTER OUTLET
 
-  // it('should have a router outlet', () => {
-  //   let de = fixture.debugElement.query(By.directive(RouterOutlet));
+  it('should have a router outlet', () => {
+    let de = fixture.debugElement.query(By.directive(RouterOutlet));
 
-  //   expect(de).not.toBeNull();
-  // });
+    expect(de).not.toBeNull();
+  });
 
-  // it('should have a link to todos page', () => {
-  //   let debugElements = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
+  it('should have a link to todos page', () => {
+    let debugElements = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
 
-  //   // <a href="/todos">
-  //   // should be like this but not: de.attributes['href']
-  //   let href = 'href';
-  //   let index = debugElements.findIndex(de => de.properties[href] === '/todos');
+    // <a href="/todos">
+    // should be like this but not: de.attributes['href']
+    let href = 'href';
+    let index = debugElements.findIndex(de => de.properties[href] === '/todos');
 
-  //   expect(index).toBeGreaterThan(-1);
-  // });
+    expect(index).toBeGreaterThan(-1);
+  });
+
 });
