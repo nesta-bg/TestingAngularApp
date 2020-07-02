@@ -1,8 +1,9 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { By } from '@angular/platform-browser';
-import { RouterOutlet, RouterLinkWithHref } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -11,7 +12,13 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ RouterTestingModule.withRoutes([]) ],
-      declarations: [ AppComponent ]
+      // one option
+      // declarations: [ AppComponent, NavComponent ]
+      declarations: [ AppComponent ],
+      // second option
+      // remove any elements or attributes that is not recognized
+      // (when we have complex template with a lot of child components or directives)
+      schemas: [ NO_ERRORS_SCHEMA ]
     }).compileComponents();
   }));
 
@@ -49,16 +56,4 @@ describe('AppComponent', () => {
 
     expect(de).not.toBeNull();
   });
-
-  it('should have a link to todos page', () => {
-    let debugElements = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
-
-    // <a href="/todos">
-    // should be like this but not: de.attributes['href']
-    let href = 'href';
-    let index = debugElements.findIndex(de => de.properties[href] === '/todos');
-
-    expect(index).toBeGreaterThan(-1);
-  });
-
 });

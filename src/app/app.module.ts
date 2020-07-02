@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HomeComponent } from './home.component';
     UsersComponent,
     ItVoterComponent,
     UserDetailsComponent,
-    HomeComponent
+    HomeComponent,
+    NavComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
