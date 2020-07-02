@@ -16,6 +16,7 @@ import { routes } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home.component';
 import { NavComponent } from './nav/nav.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NavComponent } from './nav/nav.component';
     ItVoterComponent,
     UserDetailsComponent,
     HomeComponent,
-    NavComponent
+    NavComponent,
+    HighlightDirective
   ],
   imports: [
     RouterModule.forRoot(routes),
