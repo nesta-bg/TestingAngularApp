@@ -11,6 +11,10 @@ import { VoterComponent } from './voter/voter.component';
 import { UsersComponent } from './users/users.component';
 import { ItVoterComponent } from './it-voter/it-voter.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { RouterModule } from '@angular/router';
+import { routes } from './app.routes';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home.component';
 
 @NgModule({
   declarations: [
@@ -23,10 +27,13 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     VoterComponent,
     UsersComponent,
     ItVoterComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    HomeComponent
   ],
   imports: [
-    BrowserModule
+    RouterModule.forRoot(routes),
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
