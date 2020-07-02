@@ -14,6 +14,10 @@ export class TodoService {
         return this.http.get('...');
     }
 
+    getTodosPromise() {
+        return this.http.get('...').toPromise();
+      }
+
     delete(id) {
         return this.http.delete('...');
     }
