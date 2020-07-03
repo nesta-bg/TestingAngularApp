@@ -1,4 +1,36 @@
 # TestingAngularApp
+Testing Angular Applications with Jasmine.
+
+* UNIT TESTING
+  - Unit Testing Fundamentals.
+  - Writing Clean and Maintainable Tests. 
+  - Working with Strings and Arrays.
+  - Setup and Tear Down.
+  - Working with Forms.
+  - Working with Event Emitters.
+  - Working with Spies.
+  - Interaction Testing.
+  - Working with Confirmation Boxes.
+  - Limitations of Unit Tests.
+  - Code Coverage.
+
+* INTEGRATION TESTING
+  - The Setup Code
+  - Testing Property and Class Bindings.
+  - Testing Event Bindings.
+  - Providing the Dependencies.
+  - Getting the Dependencies.
+  - Providing Stubs.
+  - Testing the Navigation.
+  - Dealing with Route Parameters.
+  - Testing RouterOutlet Components.
+  - Shallow Component Tests.
+  - Testing Attribute Directives.
+  - Dealing with Asynchronous Operations.
+
+
+
+# TestingAngularApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.5.
 
